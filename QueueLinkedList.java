@@ -44,9 +44,7 @@ public class QueueLinkedList
     }
     public static void main(String[] args) 
     { 
-        Queue q = new Queue(); 
-        System.out.println("Queue Front : " + q.front.key); 
-        System.out.println("Queue Rear : " + q.rear.key); 
+        Queue q = new Queue();
         q.enqueue(10); 
         q.enqueue(20); 
         q.dequeue(); 
