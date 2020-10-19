@@ -1,0 +1,69 @@
+package binarySearchTree2;
+
+
+public class SumOfKCmallestElemets 
+{
+	static class Node 
+	{ 
+		int data; 
+		Node left, right; 
+		Node(int x) 
+		{ 
+			data = x; 
+			left = right = null; 
+		} 
+	} 
+
+	static int count = 0,sum=0; 
+	public static Node insert(Node root, int x) 
+	{ 
+		if (root == null) 
+			return new Node(x); 
+		if (x < root.data) 
+			root.left = insert(root.left, x); 
+		else if (x > root.data) 
+			root.right = insert(root.right, x); 
+		return root; 
+	} 
+	
+	public static Node kthSmallest(Node root, int k) 
+	{ 
+		if(root==null)
+			return null;
+		Node left=kthSmallest(root.left,k);
+		if(left!=null)
+			return left;
+		sum+=root.data;
+		count++;
+		if(count==k)
+			return root;
+		return kthSmallest(root.right,k);
+	} 
+	
+	public static void printKthSmallest(Node root, int k) 
+	{ 
+		count = 0; 	
+		Node res = kthSmallest(root, k); 
+		if (res == null) 
+			System.out.println("There are less "
+						+ "than k nodes in the BST"); 
+		else
+			System.out.println("Sum of "+k+" smaller elements: "+sum); 
+	} 
+		
+	public static void main (String[] args) { 
+		
+		Node root = null; 
+		int keys[] = { 20, 8, 22, 4, 12, 10, 14 }; 
+	
+		for (int x : keys) 
+			root = insert(root, x); 
+		
+		int k = 3; 
+		printKthSmallest(root, k); 
+		
+		
+	} 
+}
+//algo
+//similar to finding the kth smallest elements. Only difference is we have a sum variable to which we add the nodes
