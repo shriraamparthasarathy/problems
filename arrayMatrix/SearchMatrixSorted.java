@@ -17,7 +17,6 @@ class SearchMatrixSorted
 			// since index_1D_array=TotalColumns*(current row)+(current column)
 			int i=mid/c;
 			int j=mid%c;
-			//cout<<mid<<" "<<arr[i][j]<<" ";
 			if(x==arr[i][j]) 
 			{
 				System.out.println("Found at "+i+" "+j);
@@ -35,8 +34,8 @@ class SearchMatrixSorted
 		int r=5,c=5;
 		int arr[][]={{1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15},{16,17,18,19,20},{21,22,23,24,25}};
 		int l=0,h=r*c-1;
-	    int x=8;
-	    if(!findElement(arr,l,h,x,c))
-	        System.out.println("Not found");
+	        int x=8;
+	        if(!findElement(arr,l,h,x,c))
+	        	System.out.println("Not found");
 	}
 }
