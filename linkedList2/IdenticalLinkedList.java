@@ -54,4 +54,4 @@ class IdenticalLinkedList
 			System.out.println("Not identical "); 
 
 	} 
-} /* This code is contributed by Rajat Mishra */
+} 
