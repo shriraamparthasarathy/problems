@@ -37,7 +37,7 @@ class CompareStringss
 	int compare(Node node1, Node node2) 
 	{ 
 		if(node1==null&&node2==null)
-			return 1;
+			return 0;
 		while(node1!=null&&node2!=null&node1.data==node2.data)
 		{
 			node1=node1.next;
@@ -75,5 +75,3 @@ class CompareStringss
 
 	} 
 } 
-
-//This code has been contributed by Mayank Jaiswal 
